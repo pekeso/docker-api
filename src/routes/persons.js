@@ -5,20 +5,20 @@ var db = require('../db');
 router.get('/all', function(req, res) {
     db.Person.findAll()
         .then(persons => {
-            res.status(200).send(JSON.stringify(persons));
+            res.status(200).json(JSON.stringify(persons));
         })
         .catch(err => {
-            res.status(500).send(JSON.stringify(err));
+            res.status(500).json(JSON.stringify(err));
         });
 });
 
 router.get('/:id', function(req, res) {
     db.Person.findByPk(req.params.id)
         .then(person => {
-            res.status(200).send(JSON.stringify(person));
+            res.status(200).json(JSON.stringify(person));
         })
         .catch(err => {
-            res.status(500).send(JSON.stringify(err));
+            res.status(500).json(JSON.stringify(err));
         });
 });
 
@@ -29,10 +29,10 @@ router.put('/', function(req, res) {
         id: req.body.id 
         })
         .then(person => {
-            res.status(200).send(JSON.stringify(person));
+            res.status(200).json(JSON.stringify(person));
         })
         .catch(err => {
-            res.status(500).send(JSON.stringify(err));
+            res.status(500).json(JSON.stringify(err));
         }); 
 });
 
@@ -43,10 +43,10 @@ router.delete('/:id', function(req, res) {
         }
     })
     .then(() => {
-        res.status(200).send('Person deleted');
+        res.status(200).json('Person deleted');
     })
     .catch(err => {
-        res.status(500).send(JSON.stringify(err));
+        res.status(500).json(JSON.stringify(err));
     });
 });
 
