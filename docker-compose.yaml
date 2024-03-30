@@ -16,8 +16,7 @@ services:
 
   addressbook:
     container_name: addressbook-api
-    build:
-      context: .
+    image: joembiye/my-node-api:latest
     environment:
       MYSQL_HOST: db
       MYSQL_DB: addressbook_db
