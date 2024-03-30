@@ -34,7 +34,7 @@ volumes:
 
 secrets:
   mysql_root_password:
-    file: ./my_pass.txt
+    file: my_pass.txt
 
 
 
