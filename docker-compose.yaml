@@ -4,7 +4,7 @@ services:
     image: mysql:latest
     container_name: db-container
     environment:
-      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MYSQL_ROOT_PASSWORD_F: /run/secrets/mysql_root_password
       MYSQL_ROOT_USER: root
       MYSQL_DATABASE: addressbook_db
     ports:
